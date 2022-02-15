@@ -1,0 +1,8 @@
+.complete {
+  opacity: 25%;
+  text-decoration-line: line-through;
+}
+.notComplete {
+  opacity: 100%;
+  text-decoration-line: none;
+}
