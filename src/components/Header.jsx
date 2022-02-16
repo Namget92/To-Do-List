@@ -17,14 +17,22 @@ function Header(props) {
 
   function handleKeyPress(event) {
     if (event.key === "Enter") {
-      props.add(name, "notComplete");
-      clearInput();
+      if (input.value.length > 0) {
+        props.add(name, "notComplete");
+        clearInput();
+      }
     }
   }
 
   function clearInput() {
     if (input.value.length > 0) {
       input.value = "";
+    }
+  }
+  function handleClick() {
+    if (input.value.length > 0) {
+      props.add(name, "notComplete");
+      clearInput();
     }
   }
 
@@ -36,14 +44,7 @@ function Header(props) {
         onChange={handleChange}
         type="text"
       />
-      <button
-        onClick={() => {
-          props.add(name, "notComplete");
-          clearInput();
-        }}
-      >
-        Add
-      </button>
+      <button onClick={handleClick}>Add</button>
       <button
         onClick={() => {
           props.saveAll();

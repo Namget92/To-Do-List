@@ -25,9 +25,13 @@ function App() {
     }
   }
 
-  function changeValue(cssClass) {
+  function changeValue(cssClass, id) {
     const goal = JSON.parse(window.localStorage.getItem("myActivities"));
-    console.log(goal[1].className);
+    activities.forEach((entry) => {
+      if (entry.id === id) {
+        entry.className = cssClass;
+      }
+    });
   }
 
   function getActivities() {

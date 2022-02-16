@@ -2,26 +2,19 @@ import React, { useState } from "react";
 import styles from "./css.modules.css";
 
 function Box(props) {
-  const [complete, setComplete] = useState("notComplete");
+  const [complete, setComplete] = useState("");
   const [i, setI] = useState(0);
 
   function handleComplete() {
-    if (i % 2 === 0) {
+    if (props.data.className === "notComplete") {
       setComplete("complete");
       setI(i + 1);
-      done();
+      props.changeValue("complete", props.data.id);
     } else {
       setComplete("notComplete");
       setI(i + 1);
-      notDone();
+      props.changeValue("notComplete", props.data.id);
     }
-  }
-
-  function done() {
-    props.changeValue("complete");
-  }
-  function notDone() {
-    props.changeValue("notComplete");
   }
 
   function handleRemove() {
@@ -30,7 +23,7 @@ function Box(props) {
   }
   return (
     <div className={props.data.className}>
-      <p>{props.data.title}</p>
+      <h3>{props.data.title}</h3>
       <button onClick={handleComplete}>✔</button>
       <button onClick={handleRemove}>✖</button>
     </div>
