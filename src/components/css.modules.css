@@ -9,8 +9,6 @@ html {
   background-size: cover;
   background-attachment: fixed;
 }
-main {
-}
 .complete {
   opacity: 50%;
   text-decoration-line: line-through;
@@ -26,6 +24,4 @@ main {
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
   background-color: antiquewhite;
-}
-h1 {
 }
